@@ -30,7 +30,7 @@ import layout from './layout';
 import util from './util';
 
 
-export default class Button extends Component {
+class Button extends Component {
     static defaultProps = {
         theme: THEME,
         primary: PRIMARY,
@@ -167,8 +167,9 @@ export default class Button extends Component {
         )
     }
 }
+export default immutableRenderDecorator(Button);
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
     button: {
         height: 36,
         alignItems: 'center',

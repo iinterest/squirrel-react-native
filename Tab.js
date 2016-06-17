@@ -138,7 +138,7 @@ class Tab extends Component {
 }
 export default immutableRenderDecorator(Tab);
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
     tabBar: {
         flexDirection: 'row',
         height: 48,

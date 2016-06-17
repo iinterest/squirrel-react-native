@@ -132,7 +132,7 @@ class Loading extends Component {
 }
 export default immutableRenderDecorator(Loading);
 
-let styles = util.create({
+const styles = util.create({
     container: {
         flex: 1,
         alignItems: 'center',

@@ -109,7 +109,7 @@ class IconButton extends Component {
 export default immutableRenderDecorator(IconButton);
 
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
     iconButton: {
         width: layout.ICON_BUTTON_SIZE,
         height: layout.ICON_BUTTON_SIZE,

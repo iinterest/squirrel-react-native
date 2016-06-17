@@ -102,7 +102,6 @@ class Bar extends Component {
             </View>;
         
         if (!buttons) {
-            //console.warn('Bar.js renderBarLayout 49:' ,'buttons is undefind');
             return BarLayout;
         }
         
@@ -172,7 +171,7 @@ class Bar extends Component {
 export default immutableRenderDecorator(Bar);
 
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
     barWrap: {
 
     },

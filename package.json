@@ -1,0 +1,33 @@
+{
+  "name": "squirrel-react-native",
+  "version": "0.1.3",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iinterest/squirrel-react-native.git"
+  },
+  "keywords": [
+    "squirrel",
+    "react-native",
+    "react",
+    "ui",
+    "library"
+  ],
+  "author": "Bell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iinterest/squirrel-react-native/issues"
+  },
+  "homepage": "http://iinterest.github.io/squirrel-react-native/",
+  "dependencies": {
+    "react-immutable-render-mixin": "^0.9.7"
+  }
+}

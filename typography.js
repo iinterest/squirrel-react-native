@@ -3,11 +3,10 @@
  * 
  */
 
-export default {
-    TYPO: {
-        paperFontTitle: {
-            fontSize: 20,
-            fontWeight: '400',
-        }
-    },
+
+export const TYPO = {
+    paperFontTitle: {
+        fontSize: 20,
+        fontWeight: '400',
+    }
 }
