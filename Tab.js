@@ -92,7 +92,7 @@ class Tab extends Component {
         }
     }
     render() {
-        const {theme, items, itemCountPrePage, activeIndex, onPressHandle, customTabStyle, customHighlightStyle} = this.props;
+        const {theme, children, items, itemCountPrePage, activeIndex, onPressHandle, customTabStyle, customHighlightStyle} = this.props;
         this.setStyle();
         let tabStyle = {
             backgroundColor: this.iStyle[theme].backgroundColor
@@ -100,6 +100,7 @@ class Tab extends Component {
         let itemStyle = {
             width: util.pw / itemCountPrePage,
         }
+        let child = null;
         const tabItems = items.map((item, index) => {
             let textColor = theme === 'dark' ? 'rgba(255,255,255,.54)' : 'rgba(0,0,0,.54)';
             let highlightStyle = {
@@ -111,6 +112,13 @@ class Tab extends Component {
                 highlightStyle = Object.assign(highlightStyle, customHighlightStyle);
                 textColor = this.iStyle[theme].color;
             }
+            children.forEach((item, i) => {
+                if (children[i] && children[i].props.tabIndex === index) {
+                    child = children[i];
+                    return;
+                }
+            });
+            
             return (
                 <TouchableOpacity
                     key={index}
@@ -118,6 +126,7 @@ class Tab extends Component {
                     onPress={() => onPressHandle(index)}
                 >
                     <Text style={{color:textColor, textAlign:'center'}} numberOfLines={2}>{item.text}</Text>
+                    {child}
                 </TouchableOpacity>
             );
         });
@@ -144,6 +153,7 @@ const styles = StyleSheet.create({
         height: 48,
     },
     tabItems: {
+        flexDirection: 'row',
         height: 48,
         paddingRight: 12,
         paddingLeft: 12,
