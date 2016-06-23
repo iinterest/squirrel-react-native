@@ -154,15 +154,14 @@ class Button extends Component {
         
         return (
             <TouchableOpacity
-                onPress={!disabled ? onPressHandle : undefined}
-            >
-                <View style={[
+                style={[
                     styles.button,
                     buttonStyle,
                     customButtonStyle,
-                ]}>
-                    {content}
-                </View>
+                ]}
+                onPress={!disabled ? onPressHandle : undefined}
+            >
+                {content}
             </TouchableOpacity>
         )
     }
