@@ -4,8 +4,8 @@
 
 ``` javascript
 <Bar
-    title="Squirrel UI"
-    type="toolbar"
+	title="Squirrel UI"
+	type="toolbar"
 />
 ```
 
@@ -51,7 +51,7 @@ const notificationButton =
 
 ### toolbar
 
-![MacDown Screenshot](https://github.com/iinterest/squirrel-react-native/images/bar-toolbar.png)
+<img src="https://raw.githubusercontent.com/iinterest/squirrel-react-native/master/images/bar-toolbar.png" width="320" />
 
 ``` javascript
 <Bar
@@ -63,7 +63,7 @@ const notificationButton =
 
 ### layoutGravity
 
-![MacDown Screenshot](https://github.com/iinterest/squirrel-react-native/images/bar-toolbar-layoutGravity.png)
+<img src="https://raw.githubusercontent.com/iinterest/squirrel-react-native/master/images/bar-toolbar-layoutGravity.png" width="320" />
 
 当 `type="toolbar"` 时，可以使用该属性设置排版： 
 
@@ -80,7 +80,7 @@ const notificationButton =
 
 ### nav
 
-![MacDown Screenshot](https://github.com/iinterest/squirrel-react-native/images/bar-nav.png)
+<img src="https://raw.githubusercontent.com/iinterest/squirrel-react-native/master/images/bar-nav.png" width="320" />
 
 
 ``` javascript
@@ -88,14 +88,5 @@ const notificationButton =
     type="nav"
     items={[NavButton1, NavButton2, NavButton3, NavButton4, NavButton5]}
 />
-
-```
-
-
-
-
-
-
-``` javascript
 
 ```
