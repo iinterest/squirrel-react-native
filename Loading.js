@@ -40,9 +40,10 @@ class Loading extends Component {
     static propTypes = {
         theme: PropTypes.oneOf(THEME_NAME),
         primary: PropTypes.oneOf(COLOR_NAME),
-        text: PropTypes.string,
+        customStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
         layout: PropTypes.oneOf(['vertical', 'horizontal']),
         size: PropTypes.oneOf(['large', 'normal', 'small']),
+        text: PropTypes.string,
     };
     constructor(props) {
         super(props);
@@ -67,7 +68,7 @@ class Loading extends Component {
         }
     }
     render() {
-        const {theme, layout, size, text} = this.props;
+        const {theme, layout, size, text, customStyle} = this.props;
         this.setStyle();
         let loadingStyle = {
             color: this.iStyle[theme].color,
@@ -123,7 +124,7 @@ class Loading extends Component {
         const Wording = text ? <Text style={textStyle}>{text}</Text> : null;
         
         return (
-            <View style={[styles.container, loadingStyle.styleContainer]}>
+            <View style={[styles.container, loadingStyle.styleContainer, customStyle]}>
                 {LoadingIndicator}
                 {Wording}
             </View>
