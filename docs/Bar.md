@@ -11,15 +11,15 @@
 
 ## 属性 Props
 
-* **theme** \<srting\> 主题；
-* **primary** \<srting\> 主色调；
-* **divider**: \<bool\> 是否显示分割线；
-* **items**: \<array\> 栏条内显示的元素；
-* **title**: \<srting\> 标题文案；
-* **layoutGravity** \<srting\> 用于来更改布局的排版，可选值包括：
+* **theme** :srting 主题；
+* **primary** :srting 主色调；
+* **divider**: :bool 是否显示分割线；
+* **items**: :array 栏条内显示的元素；
+* **title**: :srting 标题文案；
+* **layoutGravity** :srting 用于来更改布局的排版，可选值包括：
 	* **left**
 	* **center**
-* **type**: \<sstring\> 属性决定 Bar 的显示类型，可选值包括：
+* **type** :string 属性决定 Bar 的显示类型，可选值包括：
 	* **toolbar** 工具栏，是操作页面或视图中对象的控件，通常包含当前情境下最常用的指令；
 	* **nav** 是用于显示底部导航（Bottom navigation）。
 
