@@ -1,6 +1,6 @@
 /*
  * BarExample 
- * 组件说明
+ * 栏条示例
  * @author iinterest, 
  */
 
@@ -20,20 +20,26 @@ import {
     shallowEqualImmutable
 } from 'react-immutable-render-mixin';
 
-import Bar from '../Bar';
-import IconButton from '../IconButton';
+//import Bar from '../Bar';
+//import IconButton from '../IconButton';
+import {
+    COLOR,
+    TYPO,
+    Bar,
+    IconButton,
+} from '../../squirrel-react-native';
+
+import {THEME, PRIMARY} from '../../config';
+
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 class BarExample extends Component {
     static propTypes = {
-        //example: PropTypes.any.isRequired,
+        
     };
     constructor(props) {
         super(props);
-    }
-    onMenuClicked() {
-        
     }
     onButtonClicked() {
         
@@ -42,7 +48,7 @@ class BarExample extends Component {
         const MenuButton = 
             <IconButton
                 key="MenuButton"
-                onPressHandle={this.onMenuClicked.bind(this)}
+                onPressHandle={this.onButtonClicked.bind(this)}
             >
                 <Icon name="menu" size={24} />
                 {/*<View style={styles.redDot} />*/}
@@ -74,48 +80,45 @@ class BarExample extends Component {
 
         const placeHolder = <View></View>;
         
-        const TabButton1 =
+        const NavButton1 =
             <IconButton
-                key="TabButton1"
-                customStyle={styles.tabTrigger}
+                key="NavButton1"
                 onPressHandle={this.onButtonClicked.bind(this)}
             >
-                <Icon name='home'
-                    size={26}
-                    />
+                <Icon name='home'size={26} />
                 <Text style={styles.tabText}>首页</Text>
             </IconButton>;
 
-        const TabButton2 =
+        const NavButton2 =
             <IconButton
-                key="TabButton2"
+                key="NavButton2"
                 onPressHandle={this.onButtonClicked.bind(this)}
             >
                 <Icon name='lightbulb-outline' size={26} />
                 <Text style={styles.tabText}>功能建议</Text>
             </IconButton>;
 
-        const TabButton3 =
+        const NavButton3 =
             <IconButton
-                key="TabButton3"
+                key="NavButton3"
                 onPressHandle={this.onButtonClicked.bind(this)}
             >
                 <Icon name='inbox' size={26} />
                 <Text style={styles.tabText}>问题反馈</Text>
             </IconButton>;
 
-        const TabButton4 =
+        const NavButton4 =
             <IconButton
-                key="TabButton4"
+                key="NavButton4"
                 onPressHandle={this.onButtonClicked.bind(this)}
             >
                 <Icon name='bubble-chart' size={26} />
                 <Text style={styles.tabText}>主题壁纸</Text>
             </IconButton>;
 
-        const TabButton5 =
+        const NavButton5 =
             <IconButton
-                key="TabButton5"
+                key="NavButton5"
                 onPressHandle={this.onButtonClicked.bind(this)}
             >
                 <Icon name='whatshot' size={26} />
@@ -124,19 +127,35 @@ class BarExample extends Component {
         
         return (
             <View style={styles.container}>
+                
+                <View style={styles.subHeader}>
+                    <Text style={styles.h2}>工具栏 toolbar</Text>
+                </View>
+                <View style={styles.subHeader}>
+                    <Text style={styles.h3}>默认布局:</Text>
+                </View>
                 <Bar
-                    text="首页"
-                    type="nav"
-                    buttons={[MenuButton, SearchButton]}
-                />
-                <Bar
-                    text="Squirrel Bar"
+                    title="Squirrel Bar"
                     type="toolbar"
-                    buttons={[placeHolder, notificationButton, MoreButton]}
+                    items={[MenuButton, notificationButton, MoreButton]}
                 />
+                
+                <View style={styles.subHeader}>
+                    <Text style={styles.h3}>居中布局:</Text>
+                </View>
                 <Bar
-                    type="tab"
-                    buttons={[TabButton1, TabButton2, TabButton3, TabButton4, TabButton5]}
+                    title="首页"
+                    type="toolbar"
+                    layoutGravity="center"
+                    items={[MenuButton, SearchButton]}
+                />
+
+                <View style={styles.subHeader}>
+                    <Text style={styles.h2}>底部导航 Bottom navigation</Text>
+                </View>
+                <Bar
+                    type="nav"
+                    items={[NavButton1, NavButton2, NavButton3, NavButton4, NavButton5]}
                 />
             </View>
         )
@@ -149,8 +168,21 @@ let styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+    dividers: {
+        height: 1,
+        backgroundColor: '#ddd',
+        marginTop: 16,
+        marginBottom: 16,
+    },
     subHeader: {
         padding: 16
+    },
+    h2: {
+        fontSize: 18,
+        fontWeight: '500',
+    },
+    h3: {
+        fontSize: 14,
     },
     space: {
         height: 100,

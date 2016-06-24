@@ -32,15 +32,19 @@ class Bar extends Component {
     static defaultProps = {
         theme: THEME,
         primary: PRIMARY,
+        layoutGravity: 'left',
     };
     static propTypes = {
         theme: PropTypes.oneOf(THEME_NAME),
         primary: PropTypes.oneOf(COLOR_NAME),
-        buttons: PropTypes.array,
         divider: PropTypes.bool,
-        text: PropTypes.string,
+        items: PropTypes.array,
+        layoutGravity: PropTypes.oneOf([
+            'left', 'center',
+        ]),
+        title: PropTypes.string,
         type: PropTypes.oneOf([
-            'toolbar', 'nav', 'pagination', 'tab',
+            'toolbar', 'nav',
         ]).isRequired,
     };
     state = {};
@@ -82,9 +86,9 @@ class Bar extends Component {
         }
     }
     renderBarLayout() {
-        const {theme, buttons, text, type} = this.props;
-        const TitleLayout = text ?
-            <View style={[styles.title, styles[type + 'Title']]}>
+        const {theme, items, title, type, layoutGravity} = this.props;
+        const TitleLayout = title ?
+            <View style={[styles.title, layoutGravity === 'center' ? styles.gravityCenterTitle : styles[type + 'Title']]}>
                 <Text
                     style={[
                         {
@@ -93,47 +97,47 @@ class Bar extends Component {
                         }
                     ]}
                     numberOfLines={1}
-                >{text}</Text>
-            </View> :
-            null;
+                >{title}</Text>
+            </View> : null;
         let BarLayout =
             <View style={[styles.bar, styles[type + 'Bar']]}>
                 {TitleLayout}
             </View>;
         
-        if (!buttons) {
+        if (!items) {
             return BarLayout;
         }
         
         switch (type) {
-            case 'nav':
-                BarLayout =
-                    <View style={[styles.bar, styles[type + 'Bar']]}>
-                        {buttons[0]}
-                        {TitleLayout}
-                        {buttons[1]}
-                    </View>;
-                break;
             case 'toolbar':
-                const extendButtons = buttons.map((button, index) => {
-                    if (index > 0) {
-                        return button;
-                    }
-                });
-                BarLayout =
-                    <View style={[styles.bar, styles[type + 'Bar']]}>
-                        {buttons[0]}
-                        {TitleLayout}
-                        {extendButtons}
-                    </View>;
+                if (layoutGravity === 'left') {
+                    const extendButtons = items.map((button, index) => {
+                        if (index > 0) {
+                            return button;
+                        }
+                    });
+                    BarLayout =
+                        <View style={[styles.bar, styles[type + 'Bar']]}>
+                            {items[0]}
+                            {TitleLayout}
+                            {extendButtons}
+                        </View>;
+                } else if (layoutGravity === 'center') {
+                    BarLayout =
+                        <View style={[styles.bar, styles.gravityCenterBar]}>
+                            {items[0]}
+                            {TitleLayout}
+                            {items[1]}
+                        </View>;
+                }
                 break;
-            case 'tab':
-                const btnWidth = util.pw / buttons.length;
-                const tabButtons = buttons.map((button, index) => {
+            case 'nav':
+                const btnWidth = util.pw / items.length;
+                const navButtons = items.map((button, index) => {
                     return (
                         <View
                             key={index}
-                            style={[styles.tabButton, {width: btnWidth}]}
+                            style={[styles.navButton, {width: btnWidth}]}
                         >
                             {button}
                         </View>
@@ -141,7 +145,7 @@ class Bar extends Component {
                 });
                 BarLayout =
                     <View style={[styles.bar, styles[type + 'Bar']]}>
-                        {tabButtons}
+                        {navButtons}
                     </View>;
                 break;
         }
@@ -154,11 +158,11 @@ class Bar extends Component {
             backgroundColor: this.iStyle[theme].backgroundColor
         };
         if (divider) {
-            if (type === 'tab') {
+            if (type === 'nav') {
                 barStyle = Object.assign(barStyle, this.iStyle[theme].divider.top);
             } else {
                 barStyle = Object.assign(barStyle, this.iStyle[theme].divider.bottom);
-            }
+            } 
         }
         
         return (
@@ -183,26 +187,6 @@ const styles = StyleSheet.create({
         height: layout.BAR_HEIGHT,
         justifyContent: 'center',
     },
-    // nav
-    navBar: {
-        justifyContent: 'space-between',
-    },
-    navTitle: {
-        position: 'absolute',
-        left: layout.BAR_HEIGHT,
-        right: layout.BAR_HEIGHT,
-        top: 0,
-        bottom: 0,
-        alignItems: 'center',
-    },
-    // tab
-    tabBar: {
-        flexDirection: 'row',
-    },
-    tabButton: {
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
     // toolbar
     toolbarBar: {
         
@@ -210,5 +194,25 @@ const styles = StyleSheet.create({
     toolbarTitle: {
         flex: 1,
         marginLeft: 18,
+    },
+    // nav
+    navBar: {
+        flexDirection: 'row',
+    },
+    navButton: {
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    // gravityCenter
+    gravityCenterBar: {
+        justifyContent: 'space-between',
+    },
+    gravityCenterTitle: {
+        position: 'absolute',
+        left: layout.BAR_HEIGHT,
+        right: layout.BAR_HEIGHT,
+        top: 0,
+        bottom: 0,
+        alignItems: 'center',
     },
 });
