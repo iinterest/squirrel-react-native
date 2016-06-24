@@ -1,0 +1,306 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Bar · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.1.1">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="Bar.html">
+            
+                <a href="Bar.html">
+            
+                    
+                    Bar
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Bar</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6761;&#x680F;-bar">&#x6761;&#x680F; Bar</h1>
+<p>&#x6761;&#x680F; Bar&#xFF0C;&#x7528;&#x4E8E;&#x544A;&#x77E5;&#x7528;&#x6237;&#x5176;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x7684;&#x60C5;&#x5883;&#x4FE1;&#x606F;&#xFF0C;&#x4EE5;&#x53CA;&#x5E2E;&#x52A9;&#x7528;&#x6237;&#x6D4F;&#x89C8;&#x6216;&#x6267;&#x884C;&#x64CD;&#x4F5C;&#x7684;&#x63A7;&#x4EF6;&#xFF0C;&#x5305;&#x542B;&#x5BFC;&#x822A;&#x680F;&#x3001;&#x5DE5;&#x5177;&#x680F;&#x3002;</p>
+<pre><code class="lang-javascript">&lt;Bar
+    title=<span class="hljs-string">&quot;Squirrel UI&quot;</span>
+    type=<span class="hljs-string">&quot;toolbar&quot;</span>
+/&gt;
+</code></pre>
+<h2 id="&#x5C5E;&#x6027;-props">&#x5C5E;&#x6027; Props</h2>
+<ul>
+<li><strong>theme</strong> :srting &#x4E3B;&#x9898;&#xFF1B;</li>
+<li><strong>primary</strong> :srting &#x4E3B;&#x8272;&#x8C03;&#xFF1B;</li>
+<li><strong>divider</strong>: :bool &#x662F;&#x5426;&#x663E;&#x793A;&#x5206;&#x5272;&#x7EBF;&#xFF1B;</li>
+<li><strong>items</strong>: :array &#x680F;&#x6761;&#x5185;&#x663E;&#x793A;&#x7684;&#x5143;&#x7D20;&#xFF1B;</li>
+<li><strong>title</strong>: :srting &#x6807;&#x9898;&#x6587;&#x6848;&#xFF1B;</li>
+<li><strong>layoutGravity</strong> :srting &#x7528;&#x4E8E;&#x6765;&#x66F4;&#x6539;&#x5E03;&#x5C40;&#x7684;&#x6392;&#x7248;&#xFF0C;&#x53EF;&#x9009;&#x503C;&#x5305;&#x62EC;&#xFF1A;<ul>
+<li><strong>left</strong></li>
+<li><strong>center</strong></li>
+</ul>
+</li>
+<li><strong>type</strong> :string &#x5C5E;&#x6027;&#x51B3;&#x5B9A; Bar &#x7684;&#x663E;&#x793A;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x9009;&#x503C;&#x5305;&#x62EC;&#xFF1A;<ul>
+<li><strong>toolbar</strong> &#x5DE5;&#x5177;&#x680F;&#xFF0C;&#x662F;&#x64CD;&#x4F5C;&#x9875;&#x9762;&#x6216;&#x89C6;&#x56FE;&#x4E2D;&#x5BF9;&#x8C61;&#x7684;&#x63A7;&#x4EF6;&#xFF0C;&#x901A;&#x5E38;&#x5305;&#x542B;&#x5F53;&#x524D;&#x60C5;&#x5883;&#x4E0B;&#x6700;&#x5E38;&#x7528;&#x7684;&#x6307;&#x4EE4;&#xFF1B;</li>
+<li><strong>nav</strong> &#x662F;&#x7528;&#x4E8E;&#x663E;&#x793A;&#x5E95;&#x90E8;&#x5BFC;&#x822A;&#xFF08;Bottom navigation&#xFF09;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x793A;&#x4F8B;-example">&#x793A;&#x4F8B; Example</h2>
+<h3 id="items">items</h3>
+<p>Bar &#x4E2D;&#x663E;&#x793A;&#x7684; <code>items</code> &#x5C5E;&#x6027;&#x901A;&#x5E38;&#x90FD;&#x662F;&#x88AB;&#x8D4B;&#x4E88;&#x5404;&#x79CD;&#x529F;&#x80FD;&#x7684;&#x6309;&#x94AE;&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="https://github.com/iinterest/squirrel-react-native/docs/IconButton" title="IconButton" target="_blank">IconButton</a> &#x7EC4;&#x4EF6;&#x6765;&#x521B;&#x5EFA;&#x6309;&#x94AE;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> MenuButton = 
+    &lt;IconButton
+        key=&quot;MenuButton&quot;
+        onPressHandle={this.onButtonClicked.bind(this)}
+    &gt;
+        &lt;Icon name=&quot;menu&quot; size={24} /&gt;
+    &lt;/IconButton&gt;;
+
+const notificationButton =
+    &lt;IconButton
+        key=&quot;notificationButton&quot;
+        onPressHandle={this.onButtonClicked.bind(this)}
+    &gt;
+        &lt;Icon name=&apos;notifications-none&apos; size={24} /&gt;
+    &lt;/IconButton&gt;;
+</code></pre>
+<h3 id="toolbar">toolbar</h3>
+<p><img src="https://raw.githubusercontent.com/iinterest/squirrel-react-native/master/images/bar-toolbar.png" width="320"></p>
+<pre><code class="lang-javascript">&lt;Bar
+    title=<span class="hljs-string">&quot;Squirrel Bar&quot;</span>
+    type=<span class="hljs-string">&quot;toolbar&quot;</span>
+    items={[MenuButton, notificationButton, MoreButton]}
+/&gt;
+</code></pre>
+<h3 id="layoutgravity">layoutGravity</h3>
+<p><img src="https://raw.githubusercontent.com/iinterest/squirrel-react-native/master/images/bar-toolbar-layoutGravity.png" width="320"></p>
+<p>&#x5F53; <code>type=&quot;toolbar&quot;</code> &#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BE5;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x6392;&#x7248;&#xFF1A; </p>
+<pre><code class="lang-javascript">&lt;Bar
+    title=<span class="hljs-string">&quot;&#x9996;&#x9875;&quot;</span>
+    type=<span class="hljs-string">&quot;toolbar&quot;</span>
+    layoutGravity=<span class="hljs-string">&quot;center&quot;</span>
+    items={[MenuButton, SearchButton]}
+/&gt;
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5F53; <code>layoutGravity=&quot;center&quot;</code> &#x65F6;&#xFF0C;&#x680F;&#x6761;&#x53EA;&#x4F1A;&#x663E;&#x793A; <code>items</code> &#x4E2D;&#x7684;&#x524D;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
+<h3 id="nav">nav</h3>
+<p><img src="https://raw.githubusercontent.com/iinterest/squirrel-react-native/master/images/bar-nav.png" width="320"></p>
+<pre><code class="lang-javascript">&lt;Bar
+    type=<span class="hljs-string">&quot;nav&quot;</span>
+    items={[NavButton1, NavButton2, NavButton3, NavButton4, NavButton5]}
+/&gt;
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Bar","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Bar.md","mtime":"2016-06-24T02:09:31.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-06-24T03:42:23.493Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
